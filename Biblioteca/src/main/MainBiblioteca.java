@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import libros.Libro;
 
+import primerCamino.ElCaminoDelCentro;
+
 public class MainBiblioteca {
 
 	public static void main(String[] args) {
@@ -32,7 +34,7 @@ public class MainBiblioteca {
 		System.out.println("No se busca ofender a ningún publico, solo divertir. Se recomienda discreción");
 		System.out.println("Te llamas Guillermo Sanchis? Sí o No.");
 		guillermo = teclado.nextLine();
-		while (opcion != 6) {
+		while (opcion != 7) {
 			if (guillermo.equals("si") | guillermo.equals("Si") | guillermo.equals("Sí") | guillermo.equals("sí") | guillermo.equals("Afirmativo")) {
 				if (contadorImbecil < 1) {
 					System.out.println("Imbécil.");
@@ -91,6 +93,7 @@ public class MainBiblioteca {
 			System.out.println("Pues a mirar al Zara coño");
 			break;
 		case 7:
+			ElCaminoDelCentro.CaminoDelCentro();
 			break;
 		}
 		}

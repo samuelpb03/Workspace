@@ -5,20 +5,44 @@ import java.util.Random;
 
 public class personaQueEscuchaCamaron {
 	//Puntos de vida
-	int PV = 4;
-	int ataque = 2;
-	int velocidad = 1;
-	int precision = 5;
+	private int PV = 4;
+	private int ataque = 2;
+	private int velocidad = 1;
+	private int precision = 5;
 	
-	public Random ataque() {
-		new Random();
-		Random golpe = new Random(ataque);
-		return golpe;
+	public int getPV() {
+		return PV;
 	}
-	public Random precision() {
+	public void setPV(int pV) {
+		PV = pV;
+	}
+	public int getAtaque() {
+		return ataque;
+	}
+	public void setAtaque(int ataque) {
+		this.ataque = ataque;
+	}
+	public int getVelocidad() {
+		return velocidad;
+	}
+	public void setVelocidad(int velocidad) {
+		this.velocidad = velocidad;
+	}
+	public int getPrecision() {
+		return precision;
+	}
+	public void setPrecision(int precision) {
+		this.precision = precision;
+	}
+	public int ataque() {
+		new Random();
+		Random impacto = new Random(ataque);
+		return ataque;
+	}
+	public int precision() {
 		new Random();
 		Random acierto = new Random(precision);
-		return acierto;
+		return precision;
 	}
 	public personaQueEscuchaCamaron() {
 		
