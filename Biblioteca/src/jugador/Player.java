@@ -1,10 +1,14 @@
 package jugador;
 
+import java.util.Random;
+
 public class Player {
-	private int PV = 5;
+	private int PV = 7;
 	private int velocidad = 3;
 	private int ataque = 1;
-	private int precision;
+	private int precision = 6;
+	private int nivel = 1;
+	private int progreso = 1;
 	
 	public int getPV() {
 		return PV;
@@ -48,5 +52,31 @@ public class Player {
 
 	public void setPrecision(int precision) {
 		this.precision = precision;
+	}
+
+	public int getNivel() {
+		return nivel;
+	}
+
+	public void setNivel(int nivel) {
+		this.nivel = nivel;
+	}
+
+	public int getProgreso() {
+		return progreso;
+	}
+
+	public void setProgreso(int progreso) {
+		this.progreso = progreso;
+	}
+	public int ataque() {
+		Random rand = new Random();
+		int golpe = rand.nextInt(ataque + 1) + 1;
+		return golpe;
+	}
+	public int precision() {
+		Random rand = new Random();
+		int acierto = rand.nextInt(precision + 1);
+		return acierto;
 	}
 }
