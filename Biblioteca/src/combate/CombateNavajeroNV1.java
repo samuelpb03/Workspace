@@ -440,6 +440,8 @@ public class CombateNavajeroNV1 {
 							}
 						}
 						break;
+					case 3:
+						break;
 					}
 					
 				}
