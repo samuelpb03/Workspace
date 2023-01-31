@@ -3,9 +3,9 @@ package enemigos;
 import java.math.*;
 import java.util.Random;
 
-public class personaQueEscuchaCamaron {
+public class CuchilleroNV1 {
 	//Puntos de vida
-	private int PV = 7;
+	private int PV = 4;
 	private int ataque = 3;
 	private int velocidad = 1;
 	private int precision = 5;
@@ -36,7 +36,7 @@ public class personaQueEscuchaCamaron {
 	}
 	public int ataque() {
 		Random rand = new Random();
-		int golpe = rand.nextInt(ataque + 2);
+		int golpe = rand.nextInt(ataque) + 1;
 		return golpe;
 	}
 	public int precision() {
@@ -44,10 +44,10 @@ public class personaQueEscuchaCamaron {
 		int acierto = rand.nextInt(precision + 1);
 		return acierto;
 	}
-	public personaQueEscuchaCamaron() {
+	public CuchilleroNV1() {
 		
 	}
-	public personaQueEscuchaCamaron(int PV, int ataque, int velocidad, int precision) {
+	public CuchilleroNV1(int PV, int ataque, int velocidad, int precision) {
 		this.velocidad = velocidad;
 		this.ataque = ataque;
 		this.precision = precision;
