@@ -30,7 +30,7 @@ public class Player {
 		case 2:
 			jugador.PV = 6;
 			jugador.ataque = 5;
-			jugador.velocidad = 3;
+			jugador.velocidad = 3;  
 			break;
 		case 7:
 			jugador.PV = 5;
