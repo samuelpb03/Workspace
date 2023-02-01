@@ -17,6 +17,7 @@ public class CombateNavajeroNV1 {
 		int distancia = 0;
 		int desarme = 0;
 		boolean enemigoVencido = false;
+		
 
 		Scanner piensaRapido = new Scanner(System.in);
 
@@ -27,7 +28,7 @@ public class CombateNavajeroNV1 {
 				System.out.println("Caes ante tu enemigo por tus graves heridas, esperando la muerte.(intro)");
 				piensaRapido.nextLine();
 				decision = 4;
-				ElCaminoDeLaIzquierda.caminoDelHospital();
+				ElCaminoDeLaIzquierda.caminoDelHospital(jugador);
 			} else {
 				if (dañoSangrado > 0) {
 					jugador.setPV(jugador.getPV() - dañoSangrado);
@@ -45,7 +46,6 @@ public class CombateNavajeroNV1 {
 				}
 				System.out.println(
 						"Parece que se prepara para atacar, piensa rápido, lo atacas o tratas de esquivarlo? 1 Esquivar, 2 Atacar");
-
 				decision = piensaRapido.nextInt();
 				if (decision == 2) {
 					distancia = 2;
@@ -79,7 +79,8 @@ public class CombateNavajeroNV1 {
 							System.out.println("Ha conectado un puñetazo (intro)");
 							piensaRapido.nextLine();
 							distancia = 1;
-							break;
+							decision = 2;
+							//break;
 						}
 						int ataqueNavajero = navajero.ataque();
 						int vidaRestanteJugador = jugador.getPV() - ataqueNavajero;
@@ -127,7 +128,7 @@ public class CombateNavajeroNV1 {
 						System.out.println("El mundo se torna borroso y sucumbes ante tus heridas. (intro)");
 						piensaRapido.nextLine();
 						if (jugador.getProgreso() == 1) {
-							ElCaminoDeLaIzquierda.caminoDelHospital();
+							ElCaminoDeLaIzquierda.caminoDelHospital(jugador);
 							decision = 4;
 							break;
 						}
@@ -191,11 +192,14 @@ public class CombateNavajeroNV1 {
 										navajero.setPV(0);
 										System.out.println("Lo has conseguido inmovilizar y lo has desarmado. (intro)");
 										piensaRapido.nextLine();
+										enemigoVencido = true;
+										decision = 4;
+										break;
 									} else {
 										navajero.setPV(navajero.getPV() - 1);
 										navajero.setVelocidad(navajero.getVelocidad() - 1);
 										System.out.println(
-												"Se ha escapado del agarre, aunque con esfuerzo. Se le ve algo fatigado. (intro)");
+												"Se ha escapado del agarre, aunque con esfuerzo. Se le ve algo fatigado, y has podido dale al menos un golpe. (intro)");
 										piensaRapido.nextLine();
 										decision = 1;
 									}
@@ -207,15 +211,19 @@ public class CombateNavajeroNV1 {
 										navajero.setPV(0);
 										if (desarme == 0) {
 											System.out.println(
-													"Lo has conseguido inmovilizar y lo has desarmado. (intro)");
+											"Lo has conseguido inmovilizar y lo has desarmado. (intro)");
 											piensaRapido.nextLine();
 											decision = 4;
+											enemigoVencido = true;
+											break;
 										}
 										if (desarme == 1) {
 											System.out.println(
 													"Lo sometes bruscamente ahora que no tiene arma, dejandolo fuera de combate. (intro)");
 											piensaRapido.nextLine();
+											enemigoVencido = true;
 											decision = 4;
+											break;
 										}
 
 									} else {
@@ -638,6 +646,7 @@ public class CombateNavajeroNV1 {
 				if (enemigoVencido == false) {
 				System.out.println("Tras el golpe, se nota aturdido, así que conectas un tremendo golpe al estómago y otro a la barbilla. Cae derrotado al suelo.");
 				ElCaminoDeLaDerecha.caminoDerecha(jugador);
+				jugador.setProgreso(2);
 				break;
 				}
 				

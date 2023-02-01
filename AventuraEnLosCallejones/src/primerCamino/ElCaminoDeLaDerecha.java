@@ -7,9 +7,9 @@ import jugador.Player;
 import primerCamino.ElCaminoDelCentro;
 
 public class ElCaminoDeLaDerecha {
-
+	static Scanner teclado = new Scanner(System.in);
 	public static void caminoDerecha(Player jugador) {
-		Scanner teclado = new Scanner(System.in);
+		
 		//La linea de abajo es para comprobar si funciona.
 		//System.out.println(jugador.getPV());
 		if (jugador.getPV() == (jugador.getPV() / 2) + 2) {
@@ -35,8 +35,7 @@ public class ElCaminoDeLaDerecha {
 		int decisionMariposa = teclado.nextInt();
 		if (decisionMariposa == 2) {
 			System.out.println(
-					"Miras la navaja. Tiene el mango de hierro y parece algo vieja, pero el filo no está muy gastado. (intro)");
-			teclado.nextLine();
+					"Miras la navaja. Tiene el mango de hierro y parece algo vieja, pero el filo no está muy gastado.");
 			System.out.println("Servirá por ahora.");
 		}
 		System.out.println("Tu casa está al final de esta misma calle, allí podrías descansar y recuperarte. (intro)");
@@ -62,7 +61,7 @@ public class ElCaminoDeLaDerecha {
 			Casa.enCasa(jugador);
 			break;
 		case 2:
-			ElCaminoDeLaIzquierda.caminoDelHospital();
+			ElCaminoDeLaIzquierda.caminoDelHospital(jugador);
 			break;
 		}
 

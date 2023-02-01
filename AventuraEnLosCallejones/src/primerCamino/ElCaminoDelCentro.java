@@ -21,17 +21,22 @@ public class ElCaminoDelCentro {
 		Player player = new Player();
 
 		CuchilleroNV1 navajero = new CuchilleroNV1();
-		System.out.println("------------Capítulo 1: Alrededor de la libreria--------------");
+		System.out.println("------------Capítulo 1: Camino a casa--------------");
 		System.out.println("Pulsa intro para continuar.");
 		teclado.nextLine();
 		System.out.println();
 		System.out.println();
 		System.out.println(
-				"Es un atardecer cualquiera en un frío día de invierno. No hay pajaros cantando, ni flores, y está empezando a llover(Intro)");
+				"Es una noche cualquiera en un frío día de invierno. No hay pajaros cantando, ni flores, y está empezando a llover(Intro)");
+		teclado.nextLine();
+		System.out.println("Estás en casa de tu amigo Álvarez, que se ha mudado cerca de tí. De hecho, ambos os habeis mudado a esta ciudad recientemente. (intro)");
 		teclado.nextLine();
 		System.out.println(
-				"Te diriges a casa, donde te espera la cena. Todavía es de día, así que aunque vives en un barrio ");
-		System.out.println("algo lúgubre y peligroso, todo parece estar bien. (Intro)");
+				
+				"Hace algo de frío en casa de tu amigo, y se escucha la llucha chocar contra la ventana. Tu nuevo barrio parece");
+		System.out.println("algo lúgubre y peligroso, pero todo debería estar bien. (Intro)");
+		teclado.nextLine();
+		System.out.println("-Tienes una conversación mundana con tu amigo.(intro)");
 		teclado.nextLine();
 		System.out.println(
 				"TÚ:Fueron los precios de las casas lo que me atrajo aquí, la verdad es que estaba mejor en Arcilla- (Intro)");
@@ -50,7 +55,7 @@ public class ElCaminoDelCentro {
 		teclado.nextLine();
 		System.out.println("ÁLVAREZ: JAJAJAJA Bueno si, algún dia. Algúno que este sobrio.");
 		System.out.println(
-				"-Te hallas en casa de tu mejor amígo, Jorge Álvarez. Ante tí, un hombre de razonable barriga se rie ");
+				"-tu amigo (un hombre de razonable barriga) se rie ");
 		System.out.println(
 				" bochornosamente, dejando salir un aliento que podría usarse como combustible. Hay dos jarras de cerveza. (Intro)");
 		teclado.nextLine();
@@ -168,7 +173,7 @@ public class ElCaminoDelCentro {
 			ElCaminoDeLaDerecha.caminoDerecha(player);
 		} else {
 			if (player.getPV() <= 0) {
-				ElCaminoDeLaIzquierda.caminoDelHospital();
+				ElCaminoDeLaIzquierda.caminoDelHospital(player);
 			}
 			
 		}
