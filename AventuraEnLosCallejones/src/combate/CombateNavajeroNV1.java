@@ -574,7 +574,7 @@ public class CombateNavajeroNV1 {
 									enemigoVencido = true;
 									break;
 								case 2:
-									if (contacto > 7 && contacto < 8) {
+									if (contacto > 7 && contacto < 9) {
 										System.out.println(
 												"Aunque se cubra, lo golpeas con todas tus fuerzas y descontroladamente. Lo hieres peligrosamente y le cuesta respirar. te pide que pares como puede. (intro)");
 										piensaRapido.nextLine();
@@ -641,19 +641,18 @@ public class CombateNavajeroNV1 {
 				
 			}
 			
-			//probando la lectura del programa
+			//probando la lectura del programa. Ahora es código funcional. 
 			if (navajero.getPV() <= 0) {
 				if (enemigoVencido == false) {
 				System.out.println("Tras el golpe, se nota aturdido, así que conectas un tremendo golpe al estómago y otro a la barbilla. Cae derrotado al suelo.");
-				ElCaminoDeLaDerecha.caminoDerecha(jugador);
 				jugador.setProgreso(2);
+				ElCaminoDeLaDerecha.caminoDerecha(jugador);
+				
 				break;
 				}
 				
 				
 			}
-			//probando si el programa lee hasta aquí.
-			//System.out.println("Hoal");
 		} while (decision != 4);
 	}
 

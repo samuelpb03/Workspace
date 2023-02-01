@@ -23,10 +23,11 @@ public class ElCaminoDeLaIzquierda {
 			int accidenteFalso = teclado.nextInt();
 			switch (accidenteFalso) {
 			case 1:
-				System.out.println("(Doctor) E imagino que justo despues de apuñalaron y te robaron casualmente...");
+				System.out.println("(Doctor) E imagino que justo despues de apuñalaron y te robaron casualmente... (linea de derrota en el combate)");
 				System.out.println("-Recuerdas que no llevabas casco y te han atracado, así que ni siquiera puedes identificarte. Era imposible que colara.");
 				System.out.println("-A la mañana siguiente, tras identificarte debidamete. Llegas a casa. Por suerte no te han robado las llaves (intro)");
-				jugador.setPV(5);
+				/*linea comentada: sumar aquí la vida podría causar errores.*/
+				//jugador.setPV(5);
 				teclado.nextLine();
 				System.out.println("Tus heridas duelen casi insoportablemente. (intro)");
 				teclado.nextLine();
@@ -47,14 +48,16 @@ public class ElCaminoDeLaIzquierda {
 				teclado.nextLine();
 				System.out.println("-Tras hablar un rato más con el doctor sobre lo inseguras que son las calles, marchas a casa.");
 				Casa.enCasa(jugador);
+				//jugador.setProgreso(2);
 				break;
 			}
 		} //código para el jugador victorioso 
 		else {
+			System.out.println(jugador.getPV());
 			System.out.println(
 					"-Entras y pides ayuda. Los doctores te atienden enseguida, pues es muy tarde y ven los cortes en tu ropa- (intro)");
 			teclado.nextLine();
-			System.out.println("DOCTOR: Entra en la sala numero 2.");
+			System.out.println("DOCTOR: Entra en la sala numero 2. (linea de ganar batalla)");
 			if (jugador.getPV() == 2 || jugador.getPV() == 1) {
 				System.out.println(
 						"Entras y te tumbas como puedes, tras pasar el efecto de la adrenalina, empiezas a marearte por tus heridas.");
@@ -62,13 +65,13 @@ public class ElCaminoDeLaIzquierda {
 						"Entre el cansancio, el frio y tus heridas, pierdes el conicimiento. Lo último que oyes es al doctor entrando aprsuradamente. (intro)");
 				teclado.nextLine();
 				System.out.println(
-						"(Doctor) Buenos dias, llevas unas horas inconsciente. Tenías una puñalada bastante seria y varios cortes.");
+						"(Doctor) Buenos dias, llevas unas horas inconsciente. Tenías una puñalada bastante seria y varios cortes. (linea de desmayo en el hospital)");
 				System.out.println("(Doctor) De donde vienes?");
 				System.out.println("1 Contarle que has tenido un accidente con tu moto, 2 Decirle la verdad");
 				int accidenteFalso = teclado.nextInt();
 				switch (accidenteFalso) {
 				case 1:
-					System.out.println("(Doctor) E imagino que justo despues de apuñalaron y te robaron casualmente...");
+					System.out.println("(Doctor) E imagino que justo despues de apuñalaron y te robaron casualmente... (linea de desmayo en el hospital) ");
 					System.out.println("-Recuerdas que no llevabas casco y te han atracado, así que ni siquiera puedes identificarte. Era imposible que colara.");
 					System.out.println("-A la mañana siguiente, tras identificarte debidamete. Llegas a casa. Por suerte no te han robado las llaves (intro)");
 					jugador.setPV(5);
@@ -96,7 +99,7 @@ public class ElCaminoDeLaIzquierda {
 				
 				}
 			}
-			if (jugador.getPV() == 3 && jugador.getPV() <= 5) {
+			if (jugador.getPV() == 3 || jugador.getPV() <= 5) {
 				System.out.println("Vas a la sala dos, como te ha indicado el doctor.");
 				if (jugador.getPV() == 5) {
 					System.out.println("Al quitarte la chaqueta y las camisetas, no tienes heridas.");

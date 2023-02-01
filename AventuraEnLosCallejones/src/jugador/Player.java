@@ -19,7 +19,7 @@ public class Player {
 	private int ataquePistola9MM = 9;
 	
 	private int precision = 6;
-	private int nivel = 2;
+	private int nivel = 1;
 	private int progreso = 1;
 	private int asesinatos = 0;
 
