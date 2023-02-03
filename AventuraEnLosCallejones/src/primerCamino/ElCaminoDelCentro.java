@@ -36,7 +36,7 @@ public class ElCaminoDelCentro {
 				"Hace algo de frío en casa de tu amigo, y se escucha la llucha chocar contra la ventana. Tu nuevo barrio parece");
 		System.out.println("algo lúgubre y peligroso, pero todo debería estar bien. (Intro)");
 		teclado.nextLine();
-		System.out.println("-Tienes una conversación mundana con tu amigo.(intro)");
+		System.out.println("-Tienes una conversación mundana con tu amigo.(Intro)");
 		teclado.nextLine();
 		System.out.println(
 				"TÚ:Fueron los precios de las casas lo que me atrajo aquí, la verdad es que estaba mejor en Arcilla- (Intro)");
