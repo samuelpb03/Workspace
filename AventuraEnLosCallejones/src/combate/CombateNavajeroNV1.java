@@ -53,7 +53,6 @@ public class CombateNavajeroNV1 {
 				if (decision == 1) {
 					distancia = 1;
 				}
-				//codigo de prueba
 				if (jugador.getPV() > 0) {
 					switch (decision) {
 				case 1:

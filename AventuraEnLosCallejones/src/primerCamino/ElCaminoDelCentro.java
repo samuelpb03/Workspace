@@ -2,11 +2,14 @@ package primerCamino;
 
 import enemigos.CuchilleroNV1;
 
+import enemigos.TanqueNV1;
+
 import jugador.Player;
 
 import java.util.Scanner;
 
 import combate.CombateNavajeroNV1;
+import combate.CombateTanqueNV1;
 
 public class ElCaminoDelCentro {
 
@@ -19,8 +22,14 @@ public class ElCaminoDelCentro {
 		Scanner teclado = new Scanner(System.in);
 
 		Player player = new Player();
+		
+		player.setNivel(2);
 
 		CuchilleroNV1 navajero = new CuchilleroNV1();
+		TanqueNV1 tanque1 = new TanqueNV1();
+		
+		CombateTanqueNV1.peleaTanque(decision, player, tanque1);
+		
 		System.out.println("------------Capítulo 1: Camino a casa--------------");
 		System.out.println("Pulsa intro para continuar.");
 		teclado.nextLine();
