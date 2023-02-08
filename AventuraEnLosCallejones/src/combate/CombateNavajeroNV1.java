@@ -558,7 +558,8 @@ public class CombateNavajeroNV1 {
 							break;
 						case 3:
 							Random rando = new Random();
-							int contacto = rando.nextInt(11);
+							//int contacto = rando.nextInt(11);
+							int contacto = 10;
 							if (contacto > 7) {
 								System.out.print(
 										" consigues derribarlo y se queda indefenso. Que haces? 1 Te aseguras de que no continúe, 2 Aprovechas para darle una paliza.");

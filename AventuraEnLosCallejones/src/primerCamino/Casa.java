@@ -2,7 +2,13 @@ package primerCamino;
 
 import jugador.Player;
 
+import prision.PatioPrision;
+
 import java.util.Scanner;
+
+import combate.CombateTanqueNV1;
+
+import enemigos.TanqueNV1;
 
 public class Casa {
 	
@@ -20,6 +26,31 @@ public class Casa {
 			System.out.println("2 Pides la comida de un restaurante de comida rapida y te tumbas en el sofá a descansar");
 			System.out.println("3 Vas a dormir a tu habitación, estas cansado y dolorido. Ya pedirás la comida después.");
 			accion = teclado.nextInt();
+			switch (accion) {
+			case 1:
+				System.out.println("Te haces la comida. (intro)");
+				teclado.nextLine();
+				break;
+			case 2:
+				System.out.println("Pides la comida. (intro)");
+				teclado.nextLine();
+			case 3:
+				System.out.println("Vas a dormir.");
+				if (jugador.getAsesinatos() == 1) {
+					System.out.println("Te despierta un estruendo, y antes de que te des cuenta, hay tres agentes armados en tu habitación. (intro)");
+					teclado.nextLine();
+					System.out.println("AGENTE: quedas detenido por homicidio. -te dicen mientras te esposan- (intro)");
+					teclado.nextLine();
+					System.out.println("TU: pero fue en defensa propia yo solo...");
+					System.out.println("-El agente te interrumpe- (intro)");
+					teclado.nextLine();
+					System.out.println("AGENTE: vimos la escena, lo mataste cuando estaba indefenso. Tienes derecho a permaneces en silencio... (intro)");
+					teclado.nextLine();
+					//redireccionaremos a la celda, pero por ahora, al patio de la prisión.
+					
+					PatioPrision.patio();
+				}
+			}
 		}
 		else {
 			System.out.println("Buscas tu móvil antiguo en los cajones, y lo encuentras. Deberías usarlo para denunciar el robo, aunque te amenazara. (intro)");

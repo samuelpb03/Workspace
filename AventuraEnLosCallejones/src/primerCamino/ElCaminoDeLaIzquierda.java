@@ -148,6 +148,9 @@ public class ElCaminoDeLaIzquierda {
 						System.out.println("Te envían a casa.");
 						Casa.enCasa(jugador);
 					}
+					else {
+						
+					}
 				} else {
 					System.out.println("Te tumbas, y el dolor es muy intenso.(intro)");
 					teclado.nextLine();

@@ -33,7 +33,7 @@ public class Player {
 			jugador.velocidad = 3;  
 			break;
 		case 7:
-			jugador.PV = 5;
+			jugador.PV = 12;
 			jugador.ataque = 5;
 			jugador.precision = 10;
 			
@@ -101,8 +101,15 @@ public class Player {
 	}
 
 	public int ataque() {
+		int golpe;
 		Random rand = new Random();
-		int golpe = rand.nextInt(ataque);
+		if (nivel > 1) {
+		golpe = rand.nextInt(ataque) + 1;	
+		}
+		else {
+			golpe = rand.nextInt(ataque);
+		}
+		
 		return golpe;
 	}
 
