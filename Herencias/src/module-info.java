@@ -1,0 +1,2 @@
+module Herencias {
+}
