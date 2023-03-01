@@ -15,8 +15,8 @@ public class Moto extends Vehiculo{
 	public void setCarnet(char carnet) {
 		this.carnet = carnet;
 	}
-	public Moto(String color, int precio, int cilindrada, char carnet) {
-		super(color, precio);
+	public Moto(String color, int precio, int cilindrada, char carnet, int potencia, int peso) {
+		super(color, precio, potencia, peso);
 		this.carnet = carnet;
 		this.cilindrada = cilindrada;
 		// TODO Auto-generated constructor stub
